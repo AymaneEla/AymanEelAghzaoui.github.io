@@ -34,6 +34,30 @@
         const animatedModal = document.getElementById('animatedModal');
         animatedModal.classList.remove('popup-modal-open');
     });
+
+    function changeColor() {
+    var link = document.getElementById("sws-link");
+    link.style.color = "blue";
+  }
+
+   // Function to handle the CV download based on selected language
+   function downloadCV(language) {
+            // Define the file paths for each language's CV
+            const cvPaths = {
+                deutsch: 'path_to_cv_deutsch.pdf',
+                english: 'path_to_cv_english.pdf',
+                francais: 'path_to_cv_francais.pdf',
+            };
+    
+            // Get the selected language's CV path
+            const pdfPath = cvPaths[language];
+    
+            // Trigger the download
+            const link = document.createElement('a');
+            link.href = pdfPath;
+            link.download = `CV_${language}.pdf`;
+            link.click();
+        }
                            
     </script>
     <style>
@@ -115,14 +139,14 @@
                 <h4>01</h4>
                 <h1 class="size-50">Know <br /> About me</h1>
                 <div class="h-50"></div>
-                <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value.</p>
-                <div class="h-50"></div> <img src="img/Signature.svg" width="230" alt="" />
+                <p>Currently studying in my second year in the field of solar energy systems at the Institute for Training in Renewable Energy and Energy Efficiency in Tanger (IFMEREE Tanger). </p>
+                
+                <div class="h-50"></div> <img src="img/signature.png" width="500" alt="" />
                 <div class="h-50"></div>
             </div>
             <div class="col-md-6 about-img-div">
                 <div class="about-border" data-aos="fade-up" data-aos-delay=".5"></div>
-                <img src="img/DSC2.JPG" width="400" class="img-responsive" alt="" align="clearfix" data-aos="fade-right" data-aos-delay="0" />
+                <img src="img/DSC2.JPG" width="400" class="img-responsive" alt="" align="left" data-aos="fade-right" data-aos-delay="0" />
             </div>
         </div>
     </div>
@@ -141,36 +165,44 @@
                     <li class="timeline-event" data-aos="fade-up">
                         <label class="timeline-event-icon"></label>
                         <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">April 2016 - Present</p>
-                            <h3>Geil,Danke! GmbH</h3>
-                            <h4>eines Web-Studios</h4>
-                            <p><strong>Projektmanagement mit Scrum</strong>
-                                <br>Ständiges Verbessern des agilen Entwicklungsprozesses beispielsweise durch Grunt, Yeoman, GIT, JIRA und BrowserStack.</p>
+                            <p class="timeline-event-thumbnail">April 2023 - Jul 2023</p>
+                            <h3><h3><a id="sws-link" href="https://suratemsta.com/" class="black-link" target="_blank" onclick="changeColor()">Suratem</a></h3>
+                            <h4>Assistant chef de projet</h4>
+                            <p><strong>During my internship</strong>
+                                <br> I am primarily focused on solar installations. My responsibilities include conducting studies and performing sizing calculations for solar projects. I also engage in the technical and economic evaluation of solar installations, assessing their feasibility and potential. Additionally, I am involved in creating electrical diagrams and design schematics for these installations. This internship provides me with valuable hands-on experience in the field, allowing me to contribute to the realization of solar energy projects and further develop my skills in solar system design and implementation.</p>
                         </div>
                     </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">November 2014 - Mars 2016</p>
-                            <h3>Freelancer</h3>
-                            <h4>Designer und Autor</h4>
-                            <p>Konzeption, Design und Produktion von Digitalen Magazinen mit InDesign, der Adobe Digital Publishing Suite und HTML5. Co-Autorin der Fachbücher "Digitales Publizieren für Tablets" und "Adobe Digital Publishing Suite" erschienen im dpunkt.verlag.</p>
-                        </div>
-                    </li>
+                    
                     <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
                         <label class="timeline-event-icon"></label>
                         <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">April 2014</p>
-                            <h3>konplan gmbh</h3>
-                            <h4>IT-Consultant</h4>
-                            <p><strong>Systemarchitektur, Consulting</strong>
-                                <br>Konzeption und Modellierung von Systemen und APIs für Digital Publishing und Entitlement nach SOA</p>
+                            <p class="timeline-event-thumbnail">Jun 2022- Jul 2022</p>
+                            <h3><a id="sws-link" href="https://sws-energies.business.site/" class="black-link" target="_blank" onclick="changeColor()">SWS énergie</a></h3>
+                            <h4>Assistant chef de projet</h4>
+                            <p><strong>During my internship</strong>
+                                <br> I am involved in various tasks related to solar installations. These include studying and designing solar installations, conducting techno-economic evaluations of solar projects, creating electrical diagrams for solar installations, and developing solar design schematics. </p>
                         </div>
                     </li>
                 </ul>
             </div>
+            
+
+            <div class="cv-butoon">
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Download CV <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pdf/cvdeutsch.pdf" onclick="downloadCV('deutsch')">Deutsch</a></li>
+                        <li><a href="#" onclick="downloadCV('english')">English</a></li>
+                        <li><a href="pdf/cvfrancais.pdf" onclick="downloadCV('francais')">Français</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
+    
     <!-- ./experience -->
     
     <!-- projects -->
@@ -189,12 +221,7 @@
                         <div class="categories-grid wow fadeInLeft">
                             <nav class="categories">
                                 <ul class="portfolio_filter">
-                                    <li><a href="" class="active" data-filter="*">All</a></li>
-                                    <li><a href="" data-filter=".photography">Photography</a></li>
-                                    <li><a href="" data-filter=".logo">Logo</a></li>
-                                    <li><a href="" data-filter=".graphics">Graphics</a></li>
-                                    <li><a href="" data-filter=".ads">Advertising</a></li>
-                                    <li><a href="" data-filter=".fashion">Fashion</a></li>
+                                    
                                 </ul>
                             </nav>
                         </div>
@@ -202,126 +229,73 @@
                         
                         <!-- portfolio_container -->
                         <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
+
                             <!-- single work -->
-                            <div class="col-md-4 col-sm-6 fashion logo">
-                                 <a href="pdf/project1.pdf" class="portfolio_item" target="_blank">
-                                  <img src="img/portfolio/01.jpg" alt="image" class="img-responsive" />
-                                  <div class="portfolio_item_hover">
-                                   <div class="portfolio-border clearfix">
-                                  <div class="item_info"> <span>Mockups in seconds</span> <em>Fashion / Logo</em> </div>
-                                 </div>
+                            <div class="col-md-4 col-sm-6 photography">
+                                <a id="demo01" href="#animatedModal" class="portfolio_item" onclick="loadPDF('pdf/rapportforsitevdeutsch.pdf')"> <img src="img/portfolio/010.jpg" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info"> <span>Installation einer 270 kwp-Solarzentrale
+                                            </span> <em>DU</em> </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                                  </a>
-                        </div>
                             <!-- end single work -->
+                            
+
+                    
                             <!-- single work -->
-                            <div class="col-md-4 col-sm-6 fashion logo">
-                                <div class="portfolio_item" onclick="openPdf('pdf/project1.pdf')">
-                                   <img src="img/portfolio/01.jpg" alt="image" class="img-responsive" />
-                                <div class="portfolio_item_hover">
-                                <div class="portfolio-border clearfix">
-                                <div class="item_info"> <span>Mockups in seconds</span> <em>Fashion / Logo</em> </div>
-                                </div>
-                                 </div>
+                            <div class="col-md-4 col-sm-6 photography">
+                                <a id="demo02" href="#animatedModal" class="portfolio_item" onclick="loadPDF('pdf/rapportforsitevfrensh.pdf')"> <img src="img/portfolio/010.jpg" alt="image" class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info"> <span>Installation d'un central solaire de 270 kwc</span> <em>FR</em> </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
+                            <!-- end single work -->
+                            
+                            
+
+
+                          
+                            <!-- single work -->
+                            <div class="col-md-4 col-sm-6 photography">
+                                <a id="demo03" href="#animatedModal" class="portfolio_item" onclick="loadPDF('pdf/rapportpompageforsitede.pdf')"> <img src="img/portfolio/020.jpg" alt="image" style="width: 350px; height: 271px;"class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info"> <span>Dimmensionierung und Installation eines 
+                                                Solarpumpe</span> <em>DU</em> </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <!-- end single work -->
 
-                            <!-- PDF viewer container -->
-                            <div id="pdfViewer"></div>
-                            
-                            
+                             <!-- single work -->
+                             <div class="col-md-4 col-sm-6 photography">
+                                <a id="demo03" href="#animatedModal" class="portfolio_item" onclick="loadPDF('pdf/rapportdepompagefr.pdf')"> <img src="img/portfolio/020.jpg" alt="image" style="width: 350px; height: 271px;"class="img-responsive" />
+                                    <div class="portfolio_item_hover">
+                                        <div class="portfolio-border clearfix">
+                                            <div class="item_info"> <span>Dimensionnement de Systèmes de Pompage 
+                                                Photovoltaïque
+                                                </span> <em>FR</em> </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end single work -->
                            
                             
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 photography">
-                                <a id="demo03" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/02.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Photorealistic smartwatch</span> <em>Photography</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
                             
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 fashion ads">
-                                <a id="demo04" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/04.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Held by hands</span> <em>Fashion / Ads</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
                             
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo05" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/05.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Mobile devices</span> <em>Graphics / Ads</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 photography">
-                                <a id="demo06" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/010.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Photorealistic smartwatch</span> <em>Photography</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo07" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/06.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Mobile devices</span> <em>Graphics / Ads</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-
-                            <!-- single work -->
-<div class="col-md-4 col-sm-6 photography">
-    <a id="demo07" href="#animatedModal" class="portfolio_item" onclick="loadPDF('pdf/project1.pdf')"> <img src="img/portfolio/010.jpg" alt="image" class="img-responsive" />
-        <div class="portfolio_item_hover">
-            <div class="portfolio-border clearfix">
-                <div class="item_info"> <span>Photorealistic smartwatch</span> <em>Photography</em> </div>
-            </div>
-        </div>
-    </a>
-</div>
-
-
-                            
-
-
-
                             
                             
                             
 
-                        
-
-
-
-
-
-
-
+                            
 
 
                         <!-- end portfolio_container -->
@@ -335,52 +309,62 @@
     </div>
     <!-- ./projects -->
     
-    <!-- contact -->
-    <div class="section" id="contact">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>04</h4>
-                <h1 class="size-50">Contact  Me</h1>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up">
+   <!-- contact -->
+   <div class="section" id="contact">
+    <div class="container">
+        <div class="col-md-12">
+            <h4>04</h4>
+            <h1 class="size-50">Contact  Me</h1>
+            <div class="h-50"></div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up">
 
-                <h3>Phone Number</h3>
-                <p>+20 5555 569 42</p>
-                <h3> Mobile Numberr</h3>
-                <p>+20 5555 569 42</p>
-                <h3>Email</h3>
-                <p>mail@info.me </p>
+            <h3>Phone Number</h3>
+            <p>+212 682422727</p>
+            <h3>Email</h3>
+            <p>aymaneelaghzaoui98@fmail.com </p>
 
-                <h3>Social Network</h3>
+            <h3>Social Network</h3>
 
-                <ul class="social">
-                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                    <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                </ul>
-                <div class="clearfix"></div>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-8" data-aos="fade-up">
-                <form class="contact-bg" id="contact-form" name="contact" method="post" novalidate="novalidate">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" />
-                    <input type="email" name="email" class="form-control" placeholder="Your E-mail" />
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number" />
-                    <textarea name="message" class="form-control" placeholder="Your Message" style="height:120px"></textarea>
-                    <button id="submit" type="submit" name="submit" class="btn btn-glance">Send</button>
-                    <div id="success">
-                        <p class="green textcenter"> Your message was sent successfully! I will be in touch as soon as I can. </p>
-                    </div>
-                    <div id="error">
-                        <p> Something went wrong, try refreshing and submitting the form again. </p>
-                    </div>
-                </form>
-            </div>
+            <ul class="social">
+                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/aymane-el-aghzaoui-49682920a/"><i class="ion-social-linkedin"></i></a></li>
+            </ul>
+            <div class="clearfix"></div>
+            <div class="h-50"></div>
+        </div>
+        <div class="col-md-8" data-aos="fade-up">
+            <form class="contact-bg" id="contact-form" name="contact-form" method="POST" action="send-mail.php">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+                <div id="success">
+                    <p class="green textcenter"> Your message was sent successfully! I will be in touch as soon as I can. </p>
+                </div>
+                <div id="error">
+                    <p> Something went wrong, try refreshing and submitting the form again. </p>
+                </div>
+            </form>
         </div>
     </div>
-    <!-- ./contact -->
+</div>
+<!-- ./contact -->
+
+
+<!-- Footer -->
+<div id="footer">
+    <div class="container text-center">
+        <div class="fnav">
+            <p>&copy; 2023 Aymane El Aghzaoui. All Rights Reserved.</p>
+        </div>
+    </div>
+</div>
+<!-- ./Footer -->
+
 
     <!--DEMO01-->
     <div id="animatedModal" class="popup-modal">
@@ -391,13 +375,12 @@
             <div class="container">
                 <div class="portfolio-padding">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Geschäfts Eines<br /> Web-Studios</h2>
+                        <h2><br /> </h2>
                         <div class="h-50"></div>
                         <div id="pdf-container"></div>
                         <br />
                         <br />
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value.</p>
+                        
                         <br />
                         <br /> </div>
                 </div>
